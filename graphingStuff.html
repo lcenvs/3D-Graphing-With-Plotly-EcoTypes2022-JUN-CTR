@@ -139,7 +139,7 @@
 					return rows.map(function(row){return row[key];});
 				}
 				scihumTrace = {
-					name: 'Science for Humanity',
+					name: 'Science Policy',
 					x:unpack(rows, 'Place (x)'),
 					y:unpack(rows, 'Knowledge (y)'),
 					z:unpack(rows, 'Action (z)'),
@@ -190,7 +190,7 @@
 					return rows.map(function(row){return row[key];});
 				}
 				ijTrace = {
-					name: 'Indigenous Justice',
+					name: 'Earth Justice',
 					x:unpack(rows, 'Place (x)'),
 					y:unpack(rows, 'Knowledge (y)'),
 					z:unpack(rows, 'Action (z)'),
@@ -320,10 +320,10 @@
 					type: 'scatter3d'
 				};
 				scihumTrace = {
-					name: 'Science for Humanity',
-					x:unpack(rows, 'Place (x)', 'Science for Humanity'),
-					y:unpack(rows, 'Knowledge (y)', 'Science for Humanity'),
-					z:unpack(rows, 'Action (z)', 'Science for Humanity'),
+					name: 'Science Policy',
+					x:unpack(rows, 'Place (x)', 'Science Policy'),
+					y:unpack(rows, 'Knowledge (y)', 'Science Policy'),
+					z:unpack(rows, 'Action (z)', 'Science Policy'),
 					mode: 'markers',
 					marker: {
 						size: 20,
@@ -333,10 +333,10 @@
 					type: 'scatter3d'
 				};
 				ijTrace = {
-					name: 'Indigenous Justice',
-					x:unpack(rows, 'Place (x)', 'Indigenous Justice'),
-					y:unpack(rows, 'Knowledge (y)', 'Indigenous Justice'),
-					z:unpack(rows, 'Action (z)', 'Indigenous Justice'),
+					name: 'Earth Justice',
+					x:unpack(rows, 'Place (x)', 'Earth Justice'),
+					y:unpack(rows, 'Knowledge (y)', 'Earth Justice'),
+					z:unpack(rows, 'Action (z)', 'Earth Justice'),
 					mode: 'markers',
 					marker: {
 						size: 20,
@@ -359,7 +359,7 @@
 					type: 'scatter3d'
 				};
 
-				var data = [ecosciTrace, ecospirTrace, ijTrace, scihumTrace, sibTrace ];
+				var data = [ijTrace, ecosciTrace, ecospirTrace, scihumTrace, sibTrace ];
 				var layout = {
 
 
@@ -368,7 +368,7 @@
 				    x: 1,
 				    y: 0.5
 				  },
-					colorway: ['rgb(80, 134, 236)','rgb(238, 117, 47)','rgb(217, 80, 64)','rgb(242, 189, 66)','rgb(88, 165, 92)'],
+					colorway: ['rgb(217, 80, 64)','rgb(80, 134, 236)','rgb(238, 117, 47)','rgb(242, 189, 66)','rgb(88, 165, 92)'],
 
 					scene: {
 						xaxis:{
@@ -436,10 +436,10 @@
 					type: 'scatter3d'
 				};
 				scihumTrace = {
-					name: 'Science for Humanity',
-					x:unpack(rows, 'Place (x)', 'Science for Humanity'),
-					y:unpack(rows, 'Knowledge (y)', 'Science for Humanity'),
-					z:unpack(rows, 'Action (z)', 'Science for Humanity'),
+					name: 'Science Policy',
+					x:unpack(rows, 'Place (x)', 'Science Policy'),
+					y:unpack(rows, 'Knowledge (y)', 'Science Policy'),
+					z:unpack(rows, 'Action (z)', 'Science Policy'),
 					mode: 'markers',
 					marker: {
 						size: 5,
@@ -449,10 +449,10 @@
 					type: 'scatter3d'
 				};
 				ijTrace = {
-					name: 'Indigenous Justice',
-					x:unpack(rows, 'Place (x)', 'Indigenous Justice'),
-					y:unpack(rows, 'Knowledge (y)', 'Indigenous Justice'),
-					z:unpack(rows, 'Action (z)', 'Indigenous Justice'),
+					name: 'Earth Justice',
+					x:unpack(rows, 'Place (x)', 'Earth Justice'),
+					y:unpack(rows, 'Knowledge (y)', 'Earth Justice'),
+					z:unpack(rows, 'Action (z)', 'Earth Justice'),
 					mode: 'markers',
 					marker: {
 						size: 5,
@@ -475,7 +475,7 @@
 					type: 'scatter3d'
 				};
 
-				var data = [ecosciTrace, ecospirTrace, ijTrace, scihumTrace, sibTrace ];
+				var data = [ijTrace, ecosciTrace, ecospirTrace, scihumTrace, sibTrace ];
 				var layout = {
 
 
@@ -484,7 +484,7 @@
 				    x: 1,
 				    y: 0.5
 				  },
-					colorway: ['rgb(80, 134, 236)','rgb(238, 117, 47)','rgb(217, 80, 64)','rgb(242, 189, 66)','rgb(88, 165, 92)'],
+					colorway: ['rgb(217, 80, 64)','rgb(80, 134, 236)','rgb(238, 117, 47)','rgb(242, 189, 66)','rgb(88, 165, 92)'],
 
 					scene: {
 						xaxis:{
@@ -522,15 +522,15 @@
 </head>
 <body>
 	<div class="buttons">
+		<button type="button" id="Earth Justice" onclick="ijPlot()">Earth Justice</button>		
 		<button type="button" id="Ecoscience" onclick="ecosciPlot()">Ecoscience</button>
 		<button type="button" id="Ecospirituality" onclick="ecospirPlot()">Ecospirituality</button>
-		<button type="button" id="Indigenous Justice" onclick="ijPlot()">Indigenous Justice</button>
-		<button type="button" id="Science for Humanity" onclick="scihumPlot()">Science for Humanity</button>
+		<button type="button" id="Science Policy" onclick="scihumPlot()">Science Policy</button>
 		<button type="button" id="Small Green Steps" onclick="sibPlot()">Small Green Steps</button>
-		<button type="button" id="All EcoTypes (Top 4 Axes Unweighted)" onclick="showPlotAll()">Show all</button>
-		<button type="button" id="EcoTypes Attractors (Top 4 Axes Unweighted)" onclick="showPlotCtr()">Show attractors</button>
+		<button type="button" id="All EcoTypes (JUN '22)" onclick="showPlotAll()">Show all</button>
+		<button type="button" id="EcoTypes Attractors (JUN '22)" onclick="showPlotCtr()">Show attractors</button>
 	</div>
-	<h3 id="title">All EcoTypes (Top 4 Axes Unweighted)</h3>
+	<h3 id="title">All EcoTypes (JUN '22)</h3>
 	<div id='plot' >
 
 	</div>
